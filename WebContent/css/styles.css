@@ -1,0 +1,85 @@
+body, div, p, h1, h2, h3, fieldset {margin: 0; padding: 0; font-family: "Comic Sans MS";}
+p, span {font-size: 13px;}
+h1 {text-align: center;}
+
+.content {width: 800px; display: block; overflow: visible;}
+
+.centered {margin-left: auto; margin-right: auto;}
+.bordered {border: solid; border-width: 2px; padding: 7px; border-radius: 3px; margin-top: 3px; margin-bottom: 3px;}
+.legendable {position: relative; overflow: visible;}
+.navigation {position: relative; top: -10px;}
+
+.legend {z-index: 3; position: absolute; top: -16px; left: 10px; font-size: 18px; background-color: white;}
+
+.principal_productos {width:65%; float: left; text-align: center;}
+
+.principal_productos table {width: 100%}
+.principal_productos table td {width: 25%;}
+.principal_productos table .producto { width: 90%; text-align: center; border: solid; padding: 3px;}
+.principal_productos table .producto p {overflow: hidden;}
+.principal_productos table .producto .nombre {float: left;}
+.principal_productos table .producto .precio {float: right;}
+.principal_productos table .producto img {width: 50px; height: 50px;}
+.principal_productos table .producto input {width: 48%;}
+
+.principal_carrito {width:30%; height: 262px; float: right; text-align: center;}
+.carrito {width: 95%; height: 200px; overflow-y: scroll; overflow-x: hidden; padding: 5px;}
+
+.carrito_carrito {overflow: visible;}
+.carrito_carrito .carrito {width: 98%; height: 200px; overflow-y: scroll; overflow-x: hidden; padding: 5px;}
+.carrito_carrito .carrito_left {width: 65%; float: left;}
+.carrito_carrito .carrito_right {width: 30%; float: right; margin-top: 10px;}
+.carrito_right .form_client_data p {text-align: left;}
+.carrito_right .form_client_data input[type="text"], .carrito_right textarea {width: 98%;}
+.carrito_right {text-align: center;}
+
+.carrito .producto { width: 95%; border: solid; padding: 3px; margin-bottom: 2px; overflow: hidden;}
+.carrito .producto .left {float: left;}
+.carrito .producto .right {min-height: 30px; float: right; text-align: right; height: 100%; vertical-align: middle;}
+.carrito .producto .right {vertical-align: middle;}
+.carrito .producto img {width: 30px; height: 30px; vertical-align: middle;}
+.carrito .producto input {width: 35px; vertical-align: middle;}
+.carrito .producto .texto {display: block; width: 100%;}
+
+.carrito_carrito .carrito_total {text-align: right;}
+
+
+.admin_productos { width:65%; float: left; text-align: center; }
+.admin_nuevoprod { width:30%; float: right; text-align: center; }
+
+.admin_nuevoprod .admin_nuevo_producto {width: 100%; overflow: hidden; display: block;}
+.admin_nuevo_producto p {overflow: hidden;}
+.admin_nuevo_producto .nombrecampo {float: left; width: 25%; text-align: left;}
+.admin_nuevo_producto input[type="text"], .admin_nuevo_producto input[type="number"] {float: right; width: 60%;}
+
+.admin_productos table {width: 100%}
+.admin_productos table td {width: 25%;}
+.admin_productos table .producto { width: 90%; text-align: center; border: solid; padding: 3px;}
+.admin_productos table .producto p {overflow: hidden;}
+.admin_productos table .producto .stock {float: left; margin-left: 2px;}
+.admin_productos table .producto .precio {float: right;}
+.admin_productos table .producto img {width: 50px; height: 50px;}
+.admin_productos table .producto input {width: 78%;}
+.admin_productos table .producto .botonmodificar {width: 20%;}
+
+
+.botoncarrito {margin: 10px; padding: 8px 8px 8px 32px; box-shadow: 2px 2px 0px #888888; margin: 0px 2px 2px 0px;
+	font-family: Arial, Verdana; background: url(../img/carrito.png); background-size: 16px 16px;
+	background-position: 8px 8px; background-repeat: no-repeat; border-radius: 10px; border: solid;}
+
+.botoncarrito:active {
+  box-shadow: none; margin: 2px 0px 0px 2px;
+}
+.botoncarrito:focus {
+  outline: 0;
+  border-color: #555588;
+}
+
+.drop {margin: 10px auto 10px auto; display: inline-block; width: 150px; height: 150px; color: blue;}
+.overdrop {z-index: 2; position: absolute; top: 17px; width: 150px; height: 150px;}
+.drophere {background-image: url(../img/noimage.png); background-size: 150px 150px; width: 150px; height: 150px; display: table; z-index: 1;}
+.drophere p {text-align:center; vertical-align: middle; display: table-cell; }
+
+.principal_login {width: 250px; overflow: hidden; text-align: center;}
+
+

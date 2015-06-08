@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TiViCa!</title>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/main.js"></script>
+	<script src="js/misc.js"></script>
+	<script src="js/producto.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			getProductList(currentpage,8,2);
+		});
+
+		var image = "";
+		function encima(ev){ 
+			ev.preventDefault();
+			document.getElementById('dropimage').innerHTML = "<p>Suelta ahora</p>";
+			document.getElementById('dropimage').style.color = 'green';
+		}
+
+		function fuera(){ 
+			document.getElementById('dropimage').innerHTML = "<p>Arrastra aqui tu imagen</p>";
+			document.getElementById('dropimage').style.color = 'blue';
+		}
+
+		function soltado(ev){
+		ev.preventDefault();
+
+		var reader = new FileReader();
+			reader.onload = function(evt) {
+			  	image = evt.target.result;
+				document.getElementById('dropimage').innerHTML = "<p>Arrastra aqui tu imagen</p>";
+				document.getElementById('dropimage').style.color = 'blue';
+			    document.getElementById('dropimage').style.color = 'rgb(179, 255, 203)';
+			    document.getElementById('dropimage').style.backgroundImage = 'url('+evt.target.result+')';
+			};
+
+		  reader.readAsDataURL(ev.dataTransfer.files[0]);
+		}
+	</script>
+
+</head>
+<body>
+	<h1>TiViCa!</h1>
+
+	<div class="content centered">
+		<p class="navigation"><a href="index.html">Home</a> <strong>></strong> Administraci&oacute;n</p>
+
+		<div class="admin_productos bordered legendable">
+			<span class="legend">Productos</span>
+			<table id="products_table">
+			</table>
+			<p><input type="button" id="prevbtt" value="Anterior" onclick="peviousPage(2)" disabled="true"> <input type="button" value="Siguiente" onclick="nextPage(2)"></p>
+		</div>
+
+		<div class="admin_nuevoprod bordered legendable">
+			<span class="legend">Nuevo Producto</span>
+			
+			<form class="admin_nuevo_producto" id="form_nuevo_producto">
+				<div class="drop">
+					<div id="dropimage" class="drophere"><p>Arrastra aqui tu imagen</p></div>
+					<div class="overdrop" ondragover="encima(event)" ondragleave="fuera()" ondrop="soltado(event)"></div>
+				</div>
+				<input type="hidden" name="product_id" value="-1">
+				<p><span class="nombrecampo">Nombre</span><input name="product_name" type="text"></p>
+				<p><span class="nombrecampo">Stock</span><input name="product_stock" type="number"min="0" value="0"></p>
+				<p><span class="nombrecampo">Precio</span><input name="product_price" type="number" min="0" value="0.00" step="0.01"></p>
+				<input type="button" value="A&ntilde;adir/Guardar" onclick="addModifyProduct()">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

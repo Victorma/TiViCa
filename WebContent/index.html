@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TiViCa!</title>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/main.js"></script>
+	<script src="js/misc.js"></script>
+	<script src="js/producto.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$("#login_form").submit(function(e){
+				e.preventDefault();
+				logIn();
+			});
+			getProductList(1,8,0);
+			viewCart();
+		});
+	</script>
+</head>
+<body>	
+	<h1>TiViCa!</h1>
+	<div class="content centered">
+		<div class="principal_main">
+			<div class="principal_productos bordered legendable">
+				<span class="legend">Productos</span>
+				<table id="products_table">
+				</table>
+				<p><input type="button" id="prevbtt" value="Anterior" onclick="peviousPage(0)" disabled="true"> <input type="button" value="Siguiente" onclick="nextPage(0)"></p>
+			</div>
+
+			<div class="principal_carrito bordered legendable">
+				<span class="legend">Carrito</span>
+				<div id="carrito" class="carrito">
+				</div>
+				<form action="carrito.html">
+				<input id="total_price" class="botoncarrito" type="submit" value="0€">
+				</form>
+			</div>
+		</div>
+
+
+		<div class="principal_login bordered centered">
+			<form name="login_form" id="login_form">
+				<input type="text" name="lf_pass" placeholder="Contrase&ntilde;a">
+				<input type="submit" value="Log in!">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TiViCa!</title>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/main.js"></script>
+	<script src="js/misc.js"></script>
+	<script src="js/producto.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			getProductList(currentpage,8,2);
+			viewCart();
+		});
+	</script>
+</head>
+<body>
+	<h1>TiViCa!</h1>
+	
+
+	<div class="content centered">
+		<p class="navigation"><a href="index.html">Home</a> <strong>></strong> Pedido</p>
+		<div class="carrito_carrito bordered legendable">
+
+			<div class="carrito_left">
+				<span class="legend">Carrito</span>
+				<div id="carrito" class="carrito">
+				</div>
+				<div class="carrito_total bordered">Total: <span id="total_price">120€</span></div>
+			</div>
+
+			<div class="carrito_right bordered legendable">
+				<span class="legend">Datos del cliente</span>
+
+				<form id="form_client_data" class="form_client_data" name="client_data" type="submit">
+					<p>Nombre</p><input type="text" name="client_name" placeholder="ej: Pepe P&eacute;rez">
+					<p>Direccion:</p><textarea name="client_address"></textarea>
+					<p>Comentarios</p><textarea name="client_comments"></textarea>
+					<input id="cartbutton" class="botoncarrito" type="button" value="Pedir" onclick="submitCart()">
+				</form>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+	</div>
+</body>
+</html>
